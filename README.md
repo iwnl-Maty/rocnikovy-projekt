@@ -1,5 +1,5 @@
 ![Verze](https://img.shields.io/badge/Verze-1.0--Mapa_turistických_cest-purple)
-[![Programátor](https://img.shields.io/badge/Developer-Matyáš_Pierník-green)](https://github.com/iwnl-Maty)
+[![Programátor](https://img.shields.io/badge/Programátor-Matyáš_Pierník-green)](https://github.com/iwnl-Maty)
 ![Framework](https://img.shields.io/badge/Framework-Flask-blue?logo=flask&link=https://flask.palletsprojects.com/)
 # Interaktivní mapa turistických tras
 
