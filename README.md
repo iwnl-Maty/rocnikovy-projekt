@@ -1,4 +1,4 @@
-![Version](https://img.shields.io/badge/Verze-1.0--Mapping_Tourist_Paths-blue)
+![Version](https://img.shields.io/badge/Verze-1.0--Mapa_turistických_cest-purple)
 ![Author](https://img.shields.io/badge/Autor-Matyáš_Pierník-green?logo=github&logoColor=white&link=https://github.com/iwnl-Maty)
 ![Framework](https://img.shields.io/badge/Framework-Flask-blue?logo=flask&link=https://flask.palletsprojects.com/)
 # Interaktivní mapa turistických tras
