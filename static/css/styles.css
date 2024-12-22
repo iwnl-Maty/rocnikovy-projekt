@@ -1,0 +1,13 @@
+#map {
+    border: 2px solid #007bff;
+    border-radius: 10px;
+}
+
+body {
+    background-color: #f8f9fa;
+    font-family: Arial, sans-serif;
+}
+
+h1 {
+    color: #007bff;
+}
