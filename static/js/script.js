@@ -6,5 +6,5 @@ L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', {
 }).addTo(map);
 
 L.marker([50.083, 14.417]).addTo(map)
-    .bindPopup('Test: Praha')
+    .bindPopup('Testovací bod: Praha')
     .openPopup();
