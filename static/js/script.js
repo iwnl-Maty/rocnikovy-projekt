@@ -20,3 +20,24 @@ points.forEach(point => {
 setTimeout(function () {
         map.invalidateSize();
     }, 100);
+
+document.getElementById('search').addEventListener('input', function (e) {
+    const query = e.target.value.toLowerCase();
+    let found = false;
+
+    points.forEach(point => {
+        if (point.name.toLowerCase().includes(query)) {
+            map.flyTo(point.coords, 12); // Přiblížení na bod
+            found = true;
+
+            L.popup()
+                .setLatLng(point.coords)
+                .setContent(`<b>${point.name}</b><br>${point.description}`)
+                .openOn(map);
+        }
+    });
+
+    if (!found && query !== "") {
+        alert('Žádný bod zájmu nenalezen!');
+    }
+});
