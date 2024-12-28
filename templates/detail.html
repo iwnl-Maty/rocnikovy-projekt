@@ -5,17 +5,13 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Detail bodu zájmu</title>
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/styles.css') }}">
 </head>
 <body>
-    <div class="container mt-5">
-        <h1 id="title"></h1>
-        <p id="description"></p>
+    <div class="container detail-container mt-5">
+        <h1>{{ name }}</h1>
+        <p>{{ description }}</p>
         <a href="/" class="btn btn-primary mt-3">Zpět na mapu</a>
     </div>
-    <script>
-        const params = new URLSearchParams(window.location.search);
-        document.getElementById('title').innerText = params.get('name');
-        document.getElementById('description').innerText = params.get('description');
-    </script>
 </body>
 </html>
