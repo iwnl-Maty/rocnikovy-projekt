@@ -10,7 +10,8 @@ def home():
 def detail():
     name = request.args.get('name', 'Neznámé místo')
     description = request.args.get('description', 'Bez popisu')
-    return render_template('detail.html', name=name, description=description)
+    image = request.args.get('image', '')
+    return render_template('detail.html', name=name, description=description, image=image)
 
 if __name__ == "__main__":
     app.run(debug=True)

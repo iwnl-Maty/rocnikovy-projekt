@@ -1,40 +1,61 @@
 body {
-    font-family: Arial, sans-serif;
-    background-color: #f8f9fa;
+  font-family: "Arial", sans-serif;
+  background-color: #121212;
+  color: #e0e0e0;
+  margin: 0;
+  padding: 0;
 }
 
 h1 {
-    color: #007bff;
+  color: #00aaff;
 }
 
 #map {
-    height: 500px;
-    width: 100%;
-    border-radius: 10px;
-    border: 2px solid #007bff;
+  height: 500px;
+  width: 100%;
+  border-radius: 10px;
+  border: 2px solid #00aaff;
 }
 
 input[type="text"] {
-    border: 2px solid #007bff;
-    border-radius: 5px;
-    padding: 10px;
-    margin-bottom: 10px;
+  border: 2px solid #00aaff;
+  border-radius: 5px;
+  padding: 10px;
+  margin-bottom: 10px;
+  background-color: #333;
+  color: #fff;
+}
+
+input[type="text"]::placeholder {
+  color: #aaa;
 }
 
 .detail-container {
-    margin-top: 20px;
-    padding: 20px;
-    border-radius: 10px;
-    border: 2px solid #007bff;
-    background-color: #f8f9fa;
+  margin-top: 20px;
+  padding: 20px;
+  border-radius: 10px;
+  border: 2px solid #00aaff;
+  background-color: #1e1e1e;
+}
+
+.detail-image {
+  width: 100%;
+  max-width: 500px;
+  height: auto;
+  margin-top: 15px;
+  border-radius: 10px;
 }
 
 @media (max-width: 768px) {
-    #map {
-        height: 300px;
-    }
+  #map {
+    height: 300px;
+  }
 
-    h1 {
-        font-size: 1.5rem;
-    }
+  h1 {
+    font-size: 1.5rem;
+  }
+
+  input[type="text"] {
+    padding: 8px;
+  }
 }
