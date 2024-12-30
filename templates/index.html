@@ -13,11 +13,7 @@
       rel="stylesheet"
       href="{{ url_for('static', filename='css/styles.css') }}"
     />
-    <link
-      rel="icon"
-      type="image/png"
-      href="{{ url_for('static', filename='images/favicon.png') }}"
-    />
+    <link rel="icon" href="static/images/favicon.png" type="image/png" />
   </head>
   <body>
     <div class="container mt-5">
@@ -31,6 +27,6 @@
       <div id="map"></div>
     </div>
     <script src="https://unpkg.com/leaflet/dist/leaflet.js"></script>
-    <script src="{{ url_for('static', filename='js/script.js') }}"></script>
+    <script src="static/js/script.js"></script>
   </body>
 </html>
