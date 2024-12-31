@@ -18,7 +18,6 @@ Tento projekt je webová aplikace vytvořená jako maturitní práce. Slouží k
 
 ### Backend
 - **Flask**: Pro backend aplikace a správu požadavků na serveru.
-- **SQLite**: Lehká databáze pro ukládání informací o bodech zájmu.
 
 ### Frontend
 - **HTML, CSS, Bootstrap**: Pro responsivní a moderní design aplikace.
