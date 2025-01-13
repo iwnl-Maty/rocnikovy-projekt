@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="cs">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Přidat bod zájmu</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+</head>
+<body>
+    <div class="container mt-5">
+        <h2 class="text-center">Přidat bod zájmu</h2>
+        <form method="POST" action="{{ url_for('add_point') }}">
+            <div class="mb-3">
+                <label for="name" class="form-label">Název bodu</label>
+                <input type="text" class="form-control" id="name" name="name" required>
+            </div>
+            <div class="mb-3">
+                <label for="description" class="form-label">Popis</label>
+                <textarea class="form-control" id="description" name="description" required></textarea>
+            </div>
+            <div class="mb-3">
+                <label for="latitude" class="form-label">Zeměpisná šířka</label>
+                <input type="text" class="form-control" id="latitude" name="latitude" required>
+            </div>
+            <div class="mb-3">
+                <label for="longitude" class="form-label">Zeměpisná délka</label>
+                <input type="text" class="form-control" id="longitude" name="longitude" required>
+            </div>
+            <button type="submit" class="btn btn-primary w-100">Přidat bod</button>
+        </form>
+    </div>
+</body>
+</html>
