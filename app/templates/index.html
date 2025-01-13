@@ -19,7 +19,7 @@
     </div>
     <script src="https://unpkg.com/leaflet/dist/leaflet.js"></script>
     <script>
-        const mapPoints = "{{ points | tojson | safe }}";
+        const mapPoints = JSON.parse('{{ points|tojson|safe }}');
     </script>
     <script src="{{ url_for('static', filename='js/script.js') }}"></script>
 </body>

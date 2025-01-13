@@ -1,5 +1,5 @@
 from . import db
-from flask_login import UserMixin # type: ignore
+from flask_login import UserMixin
 
 class User(UserMixin, db.Model):
     id = db.Column(db.Integer, primary_key=True)
@@ -10,10 +10,9 @@ class User(UserMixin, db.Model):
 class PointOfInterest(db.Model):
     id = db.Column(db.Integer, primary_key=True)
     name = db.Column(db.String(150), nullable=False)
-    description = db.Column(db.Text, nullable=True)
+    description = db.Column(db.Text, nullable=False)
     latitude = db.Column(db.Float, nullable=False)
     longitude = db.Column(db.Float, nullable=False)
-    added_by = db.Column(db.Integer, db.ForeignKey('user.id'))
 
     def to_dict(self):
         return {

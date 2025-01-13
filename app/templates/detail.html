@@ -11,6 +11,7 @@
     <div class="container mt-5">
         {% if point %}
             <h1>{{ point.name }}</h1>
+            <img src="{{ point.image }}" alt="{{ point.name }}" class="detail-image">
             <p>{{ point.description }}</p>
             <p><strong>Souřadnice:</strong> {{ point.latitude }}, {{ point.longitude }}</p>
         {% else %}
