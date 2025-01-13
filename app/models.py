@@ -22,5 +22,4 @@ class PointOfInterest(db.Model):
             'description': self.description,
             'latitude': self.latitude,
             'longitude': self.longitude,
-            'added_by': self.added_by
         }
