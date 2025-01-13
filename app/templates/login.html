@@ -9,7 +9,8 @@
 <body>
     <div class="container mt-5">
         <h2 class="text-center">Přihlášení</h2>
-        <form method="POST" action="{{ url_for('login') }}">
+        <!-- Opravený odkaz na login -->
+        <form method="POST" action="{{ url_for('main.login') }}">
             <div class="mb-3">
                 <label for="username" class="form-label">Uživatelské jméno</label>
                 <input type="text" class="form-control" id="username" name="username" required>

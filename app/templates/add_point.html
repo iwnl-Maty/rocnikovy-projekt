@@ -9,7 +9,7 @@
 <body>
     <div class="container mt-5">
         <h2 class="text-center">Přidat bod zájmu</h2>
-        <form method="POST" action="{{ url_for('add_point') }}">
+        <form method="POST" action="{{ url_for('main.add_point') }}">
             <div class="mb-3">
                 <label for="name" class="form-label">Název bodu</label>
                 <input type="text" class="form-control" id="name" name="name" required>
