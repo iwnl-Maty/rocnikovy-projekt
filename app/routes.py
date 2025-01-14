@@ -8,13 +8,17 @@ main = Blueprint('main', __name__)
 @main.route('/')
 def index():
     points = PointOfInterest.query.all()
-    points_dict = [point.to_dict() for point in points]
-    return render_template('index.html', points=points_dict)
-
-@main.route('/detail/<int:point_id>')
-def detail(point_id):
-    point = PointOfInterest.query.get_or_404(point_id)
-    return render_template('detail.html', point=point)
+    points_data = [
+        {
+            "id": point.id,
+            "name": point.name,
+            "description": point.description,
+            "latitude": point.latitude,
+            "longitude": point.longitude,
+        }
+        for point in points
+    ]
+    return render_template('index.html', points=points_data)
 
 @main.route('/add', methods=['GET', 'POST'])
 @login_required
@@ -62,3 +66,9 @@ def logout():
     logout_user()
     flash('Odhlášení proběhlo úspěšně.')
     return redirect(url_for('main.index'))
+
+@main.route('/points')
+def list_points():
+    points = PointOfInterest.query.all()
+    return render_template('points.html', points=points)
+

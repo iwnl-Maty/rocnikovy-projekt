@@ -1,7 +1,8 @@
-from flask import Flask, render_template, request # type: ignore
+import app
+from flask import Flask, render_template, request, redirect, url_for, flash# type: ignore
 from flask_sqlalchemy import SQLAlchemy # type: ignore
 from flask_migrate import Migrate # type: ignore
-
+from flask_login import current_user
 app = Flask(__name__)
 
 app.config['SQLALCHEMY_DATABASE_URI'] = 'mysql+mysqlconnector://matypiernik:projektos@localhost/mydatabase'
@@ -26,12 +27,35 @@ class PointOfInterest(db.Model):
 def home():
     return render_template('index.html')
 
-@app.route('/detail')
-def detail():
-    name = request.args.get('name', 'Neznámé místo')
-    description = request.args.get('description', 'Bez popisu')
-    image = request.args.get('image', '')
-    return render_template('detail.html', name=name, description=description, image=image)
-
 if __name__ == "__main__":
     app.run(debug=True)
+
+@app.route('/add_point', methods=['GET', 'POST'])
+def add_point():
+    if request.method == 'POST':
+        name = request.form.get('name')
+        description = request.form.get('description')
+        latitude = request.form.get('latitude')
+        longitude = request.form.get('longitude')
+
+        if not name or not latitude or not longitude:
+            flash('Prosím, vyplňte všechna povinná pole!', 'error')
+            return redirect(url_for('add_point'))
+
+        try:
+            new_point = PointOfInterest(
+                name=name,
+                description=description,
+                latitude=float(latitude),
+                longitude=float(longitude)
+            )
+            db.session.add(new_point)
+            db.session.commit()
+            flash('Bod zájmu byl úspěšně přidán!', 'success')
+            return redirect(url_for('home'))
+        except Exception as e:
+            db.session.rollback()
+            flash(f'Nastala chyba při ukládání: {e}', 'error')
+            return redirect(url_for('add_point'))
+
+    return render_template('add_point.html')

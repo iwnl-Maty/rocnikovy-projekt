@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="cs">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Body zájmu</title>
+</head>
+<body>
+    <h1>Seznam bodů zájmu</h1>
+    <table border="1">
+        <tr>
+            <th>ID</th>
+            <th>Název</th>
+            <th>Popis</th>
+            <th>Zeměpisná šířka</th>
+            <th>Zeměpisná délka</th>
+        </tr>
+        {% for point in points %}
+        <tr>
+            <td>{{ point.id }}</td>
+            <td>{{ point.name }}</td>
+            <td>{{ point.description }}</td>
+            <td>{{ point.latitude }}</td>
+            <td>{{ point.longitude }}</td>
+        </tr>
+        {% endfor %}
+    </table>
+</body>
+</html>
