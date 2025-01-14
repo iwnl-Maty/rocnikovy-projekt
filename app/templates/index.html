@@ -11,16 +11,12 @@
 <body>
     <div class="container mt-5">
         <h1 class="text-center mb-4">Mapa turistických tras</h1>
-        <input id="search" type="text" placeholder="Vyhledat bod zájmu..." class="form-control mb-3">
         <div id="map"></div>
         <div class="mt-3">
             <a href="{{ url_for('main.add_point') }}" class="btn btn-primary">Přidat bod zájmu</a>
         </div>
     </div>
     <script src="https://unpkg.com/leaflet/dist/leaflet.js"></script>
-    <script>
-        const mapPoints = JSON.parse('{{ points|tojson|safe }}');
-    </script>
     <script src="{{ url_for('static', filename='js/script.js') }}"></script>
 </body>
 </html>
